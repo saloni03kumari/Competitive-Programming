@@ -1,0 +1,17 @@
+class Solution {
+    static String armstrongNumber(int n) {
+        int x = n;
+        int h = n / 100;
+        int rem = n % 100;
+        int t = rem / 10;
+        int u = rem% 10;
+        
+        int sum = (int)Math.pow(h, 3) + (int)Math.pow(t, 3) + (int)Math.pow(u, 3);
+        
+        if (sum == x) {
+            return "true";
+        } else {
+            return "false";
+        }
+    }
+}
