@@ -1,0 +1,47 @@
+import java.util.Scanner;
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+        
+        while (t-- > 0) {
+            int n = scanner.nextInt();
+            boolean flg = true;
+            
+            if (n <= 6 || n == 9) {
+                flg = false;
+                System.out.println("NO");
+            }
+            
+            if (flg) {
+                System.out.println("YES");
+                
+                if (n == 7) {
+                    System.out.println("1 2 4");
+                } else if (n == 8) {
+                    System.out.println("1 2 5");
+                } else {
+                    int xx, yy, zz;
+                    int val = n / 3;
+                    int le = n - 3 * val;
+                    
+                    if (le == 0) {
+                        xx = 1;
+                        yy = 3 + 1;
+                        zz = 3 * (val - 1) - 2;
+                        System.out.println(xx + " " + yy + " " + zz);
+                    } else {
+                        xx = le;
+                        yy = 3 + 1;
+                        zz = 3 * (val - 1) - 1;
+                        System.out.println(xx + " " + yy + " " + zz);
+                    }
+                }
+            }
+        }
+        
+        
+    }
+}
