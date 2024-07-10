@@ -1,0 +1,38 @@
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+
+class GFG {
+    
+    static int geekOnacci(int A, int B, int C, int N) {
+        if (N == 1) {
+            return A;
+        }
+        if (N == 2) {
+            return B;
+        }
+        if (N == 3) {
+            return C;
+        }
+        
+        return geekOnacci(A, B, C, N-1) + geekOnacci(A, B, C, N-2) + geekOnacci(A, B, C, N-3);
+    }
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt(); // Number of test cases
+        
+        while (T-- > 0) {
+            int A = sc.nextInt();
+            int B = sc.nextInt();
+            int C = sc.nextInt();
+            int N = sc.nextInt();
+            
+            int result = geekOnacci(A, B, C, N);
+            System.out.println(result);
+        }
+        
+    }
+}
